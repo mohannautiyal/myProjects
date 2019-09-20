@@ -40,6 +40,9 @@ public class JpademoApplication implements CommandLineRunner {
 		
 		System.out.println("================================================");
 		logger.info("Find All persons -> {}" ,personDao.findAll());
+		
+		
+		logger.info("Get person data --> {}", personDao.getPersonData(1003));
 	
 	}
 
