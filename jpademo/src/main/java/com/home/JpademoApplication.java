@@ -39,7 +39,7 @@ public class JpademoApplication implements CommandLineRunner {
 		logger.info("updating id 1001 --> {}",personDao.updatePerson(new person(1006,"Ranjan","Calcuatta",new Date())));
 		
 		System.out.println("================================================");
-		logger.info("Find All -> {}" ,personDao.findAll());
+		logger.info("Find All persons -> {}" ,personDao.findAll());
 	
 	}
 
