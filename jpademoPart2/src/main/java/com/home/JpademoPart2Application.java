@@ -27,6 +27,10 @@ public class JpademoPart2Application implements CommandLineRunner {
 
 		logger.info("Find course by id -> {}",courseRepo.findById(1001L));
 		
+		courseRepo.DeleteById(1001L);
+		//logger.info("Deleted -->_{},courseRepo.);
+		
+		
 		
 	}
 

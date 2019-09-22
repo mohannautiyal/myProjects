@@ -1,5 +1,6 @@
 package com.home;
 
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -18,9 +19,22 @@ public class JpademoPart2ApplicationTests {
 	CourseRepository courseRepo;
 
 	@Test
-	public void contextLoads() {
+	public void FindCoursebyID() {
 		
-		assertTrue("Course Repository failed", courseRepo.findById(1001L).getName().equalsIgnoreCase("Spring Boot"));;
+		assertTrue("Find Course By Id failed", courseRepo.findById(1003L).getName().equalsIgnoreCase("Rest Services"));;
 	}
+	
+	@Test
+	public void DeleteById() {
+		courseRepo.DeleteById(1002L);
+        
+		assertNull("Delete by Id failed", courseRepo.findById(1002L));
+	
+	
+	}
+	
+	
+	
+	
 
 }
