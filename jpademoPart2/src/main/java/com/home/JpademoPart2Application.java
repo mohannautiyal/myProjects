@@ -7,6 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.home.entity.Course;
 import com.home.repository.CourseRepository;
 
 @SpringBootApplication
@@ -28,7 +29,8 @@ public class JpademoPart2Application implements CommandLineRunner {
 		logger.info("Find course by id -> {}",courseRepo.findById(1001L));
 		
 		courseRepo.DeleteById(1001L);
-		//logger.info("Deleted -->_{},courseRepo.);
+		
+		logger.info("Save new Course --> {}",courseRepo.SaveCourse(new Course("Advaced Java"))  );
 		
 		
 		

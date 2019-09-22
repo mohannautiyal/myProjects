@@ -30,5 +30,18 @@ public class CourseRepository {
 		return "Entity with " + id + " deleted";
 		
 	}
+	
+	
+	public Course SaveCourse(Course Course) {		
+		if(Course.getId()==null) {
+			em.persist(Course);
+		}
+		else
+		 em.merge(Course);			
+		
+		return Course;
+	}
+	
+	
 
 }
