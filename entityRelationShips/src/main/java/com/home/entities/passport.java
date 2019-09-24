@@ -4,28 +4,24 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 @Entity
-public class Student {
+public class passport {
 	
 	@Id
 	@GeneratedValue
 	@Column(name="Id")
-	private int Student_Id;
+	private int Passport_Id;
 	
 	@Column(nullable=false)
 	private String name;
-	
-	@OneToOne
-	private passport passport;
 
-	public int getStudent_Id() {
-		return Student_Id;
+	public int getPassport_Id() {
+		return Passport_Id;
 	}
 
-	public void setStudent_Id(int student_Id) {
-		Student_Id = student_Id;
+	public void setPassport_Id(int passport_Id) {
+		Passport_Id = passport_Id;
 	}
 
 	public String getName() {
@@ -36,18 +32,20 @@ public class Student {
 		this.name = name;
 	}
 
-	public Student(String name) {
+	@Override
+	public String toString() {
+		return "passport [Passport_Id=" + Passport_Id + ", name=" + name + "]";
+	}
+
+	public passport(String name) {
 		super();
 		this.name = name;
 	}
 
-	@Override
-	public String toString() {
-		return "\n Student [Student_Id=" + Student_Id + ", name=" + name + "]";
-	}
-	
-	public Student() {
+	public passport() {
+		
 		
 	}
+		
 
 }
