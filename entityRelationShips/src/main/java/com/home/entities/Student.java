@@ -20,6 +20,14 @@ public class Student {
 	@OneToOne
 	private passport passport;
 
+	public passport getPassport() {
+		return passport;
+	}
+
+	public void setPassport(passport passport) {
+		this.passport = passport;
+	}
+
 	public int getStudent_Id() {
 		return Student_Id;
 	}
