@@ -24,6 +24,15 @@ public class StudentRepository {
 	}
 
 	
+	public passport getPassport(int id) {
+		passport passport = em.find(passport.class, id);
+		return passport;
+		
+	}
+	
+	
+	
+	
 	public Student saveStudent(Student student, passport passport) {
 		em.persist(passport);
 		student.setPassport(passport);

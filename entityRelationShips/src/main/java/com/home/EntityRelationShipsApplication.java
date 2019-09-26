@@ -26,6 +26,14 @@ public class EntityRelationShipsApplication implements CommandLineRunner{
 		studentRep.saveStudent(new Student("Kritika Singh"), new passport("EM394828"));
 		System.out.println("Student saved successfully");
 		
+		passport passport=studentRep.getPassport(2001);
+		String name = passport.getStudent().getName();
+		System.out.println("Name of student with passport id 200 is "+name);
+		
+		
+		
+		
+		
 	}
 
 }

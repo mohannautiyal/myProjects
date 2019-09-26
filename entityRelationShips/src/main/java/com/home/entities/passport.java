@@ -2,19 +2,32 @@ package com.home.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class passport {
-	
+
 	@Id
 	@GeneratedValue
-	@Column(name="Id")
+	@Column(name = "Id")
 	private int Passport_Id;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	private String name;
+
+	@OneToOne(fetch=FetchType.LAZY,mappedBy="passport")
+	private Student Student;
+
+	public Student getStudent() {
+		return Student;
+	}
+
+	public void setStudent(Student student) {
+		Student = student;
+	}
 
 	public int getPassport_Id() {
 		return Passport_Id;
@@ -43,9 +56,7 @@ public class passport {
 	}
 
 	public passport() {
-		
-		
+
 	}
-		
 
 }
