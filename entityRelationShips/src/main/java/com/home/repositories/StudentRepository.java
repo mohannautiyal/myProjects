@@ -1,11 +1,15 @@
 package com.home.repositories;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
+import com.home.entities.Course;
+import com.home.entities.Review;
 import com.home.entities.Student;
 import com.home.entities.passport;
 
@@ -41,4 +45,10 @@ public class StudentRepository {
 
 	}
 
+	
+	public List<Review> getReviews(int id){
+		
+	  return	em.find(Course.class, id).getReviews();
+	}
+	
 }
