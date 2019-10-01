@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
+
 import org.springframework.stereotype.Repository;
 
 import com.home.entities.country;
@@ -17,9 +18,11 @@ public class countryDao {
 	EntityManager em;
 	
 	
-	public president getHeadOfState(int id) {
+	public String getHeadOfState(int id) {
+		country ctry = em.find(country.class, id);
+		president president =  ctry.getPresident();
+		return  president.getName();
 		
-		return em.find(country.class, id).getPresident();
 		
 		
 	}
@@ -33,7 +36,6 @@ public class countryDao {
 	}
 	
 	
-  //  @Transactional
     public void saveCountry() {
     	
     	president president = new president("xyx new Pres");
