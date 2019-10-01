@@ -51,4 +51,29 @@ public class StudentRepository {
 	  return	em.find(Course.class, id).getReviews();
 	}
 	
+	
+	public void insertReview(int id,String rating, String review) {
+		
+
+	Course Course =	em.find(Course.class, id);
+	
+	Review Review = new Review(rating,review);
+	Review.setCourse(Course);
+	em.persist(Review);
+	Course.addReview(Review);
+		
+	}
+	
+	
+	public List<Student> getStudentsInCourse(int id) {
+		
+		
+	Course course= 	em.find(Course.class, id);
+	List<Student> students = course.getStudent();
+	
+	return students;
+		
+	}
+	
+	
 }

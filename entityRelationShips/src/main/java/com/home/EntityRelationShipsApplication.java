@@ -38,18 +38,30 @@ public class EntityRelationShipsApplication implements CommandLineRunner{
 		 * System.out.println("Name of student with passport id 200 is "+name);
 		  */
 		
-		System.out.println("===============================================");
-		  System.out.println("Course Review Details are as below :");
-		
-		
-		List<Review> reviews =studentRep.getReviews(3004);
-		
-		for(Review review:reviews) {
-			System.out.println(review.getRating() +  "   " +review.getDescription());
-			
+		/*
+		 * System.out.println("===============================================");
+		 * System.out.println("Course Review Details are as below :");
+		 * 
+		 * 
+		 * List<Review> reviews =studentRep.getReviews(3004);
+		 * 
+		 * for(Review review:reviews) { System.out.println(review.getRating() + "   "
+		 * +review.getDescription());
+		 * 
+		 * }
+		 * 
+		 * System.out.println("===============================================");
+		 * 
+		 * studentRep.insertReview(3002, "****", "Its an average course");
+		 * 
+		 */
+		System.out.println("===========================================");
+		List<Student> students =studentRep.getStudentsInCourse(3004);
+		for(Student student: students) {
+			System.out.println(student.getName());
+			;
 		}
 		
-		System.out.println("===============================================");
 
 	}
 

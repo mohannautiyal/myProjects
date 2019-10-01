@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -24,6 +25,18 @@ public class Course {
 
 		public int getId() {
 		return Id;
+	}
+		
+    
+    @ManyToMany(mappedBy="course")		
+    private List<Student> student = new ArrayList<Student>();
+
+	public List<Student> getStudent() {
+		return student;
+	}
+
+	public void addStudent(Student student) {
+		this.student.add(student);
 	}
 
 	public void setId(int id) {

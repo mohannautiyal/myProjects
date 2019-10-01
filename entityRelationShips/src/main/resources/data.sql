@@ -18,6 +18,14 @@ insert into Course (Id,name) values(3002,'Dev Ops');
 insert into Course (Id,name) values(3003,'Angular');
 insert into Course (Id,name) values(3004,'Html');
 
+insert into Student_Course (Student_Id,Course_Id) values (1001,3001);
+insert into Student_Course (Student_Id,Course_Id) values (1002,3001);
+insert into Student_Course (Student_Id,Course_Id) values (1002,3002);
+insert into Student_Course (Student_Id,Course_Id) values (1001,3002);
+insert into Student_Course (Student_Id,Course_Id) values (1003,3001);
+insert into Student_Course (Student_Id,Course_Id) values (1003,3004);
+
+
 
 insert into Review (id,rating,description,Course_Id) values(4001,'**','Good Course',3001);
 insert into Review (id,rating,description,Course_Id) values(4002,'***','Very Good',3002);
