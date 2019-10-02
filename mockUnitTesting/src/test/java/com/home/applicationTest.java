@@ -10,6 +10,7 @@ public class applicationTest {
 
 		
 	CalculatorService service = new mockCalcService();
+	CalculatorService mockService;
 	
 	@Test
 	public void testingcalculatorusingStub() {
@@ -25,9 +26,9 @@ public class applicationTest {
 	@Test
 	public void testingcalculatorusingMock() {
 		
-		service =  mock(CalculatorService.class);
-		when(service.calculate(12, 15)).thenReturn(27);
-		calculator calculator = new calculator(service);
+		mockService =  mock(CalculatorService.class);
+		when(mockService.calculate(12, 15)).thenReturn(27);
+		calculator calculator = new calculator(mockService);
 				
 		assertTrue("Incorrect calculation", calculator.add(12, 15)==27);
 	}
