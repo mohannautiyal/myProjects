@@ -12,6 +12,7 @@ public class calculatorController {
 		
 	@GetMapping(value="/add")
 	public int add(@RequestParam int a,@RequestParam int b) {
+		//System.out.println("Inside Add Contorller" + (a+b));
 		return a + b;
 		}
 	
